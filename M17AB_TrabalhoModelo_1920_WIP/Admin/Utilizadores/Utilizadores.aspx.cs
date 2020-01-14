@@ -14,6 +14,37 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Utilizadores
         {
             //TODO: página só para admins
 
+            ConfigurarGrid();
+
+            AtualizarGrid();
+        }
+
+        private void AtualizarGrid()
+        {
+            //limpar gridview
+            GvUtilizadores.Columns.Clear();
+            GvUtilizadores.DataSource = null;
+            GvUtilizadores.DataBind();
+
+            Utilizador utilizador = new Utilizador();
+
+            GvUtilizadores.DataSource = utilizador.ListaTodosUtilizadores();
+            GvUtilizadores.DataBind();
+
+        }
+
+        private void ConfigurarGrid()
+        {
+            //paginação
+            GvUtilizadores.AllowPaging = true;
+            GvUtilizadores.PageSize = 5;
+            GvUtilizadores.PageIndexChanging += GvUtilizadores_PageIndexChanging;
+        }
+
+        private void GvUtilizadores_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GvUtilizadores.PageIndex = e.NewPageIndex;
+            AtualizarGrid();
         }
 
         protected void Button1_Click(object sender, EventArgs e)

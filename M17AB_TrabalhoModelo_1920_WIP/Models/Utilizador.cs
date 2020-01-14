@@ -76,6 +76,11 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Models
             };
             bd.executaSQL(sql, parametros);
         }
+        //TODO: continuar aqui!!!
+        internal object ListaTodosUtilizadores()
+        {
+            throw new NotImplementedException();
+        }
         //remover
         //editar
         //listar_todos
