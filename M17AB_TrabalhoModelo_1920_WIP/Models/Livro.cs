@@ -25,10 +25,11 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Models
             bd = new BaseDados();
         }
 
-        public void Adicionar()
+        public int Adicionar()
         {
             string sql = @"INSERT INTO Livros(nome,ano,data_aquisicao,preco,autor,tipo,estado)
-                    VALUES (@nome,@ano,@data_aquisicao,@preco,@autor,@tipo,@estado)";
+                    VALUES (@nome,@ano,@data_aquisicao,@preco,@autor,@tipo,@estado);
+                    SELECT CAST(SCOPE_IDENTITY() AS INT)";
             List<SqlParameter> parametros = new List<SqlParameter>()
             {
                 new SqlParameter()
@@ -74,7 +75,7 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Models
                     Value=this.estado
                 },
             };
-            bd.executaSQL(sql, parametros);
+            return bd.executaEDevolveSQL(sql, parametros);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using M17AB_TrabalhoModelo_1920.Classes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -76,10 +77,10 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Models
             };
             bd.executaSQL(sql, parametros);
         }
-        //TODO: continuar aqui!!!
-        internal object ListaTodosUtilizadores()
+        
+        internal DataTable ListaTodosUtilizadores()
         {
-            throw new NotImplementedException();
+            return bd.devolveSQL("SELECT * FROM Utilizadores");
         }
         //remover
         //editar

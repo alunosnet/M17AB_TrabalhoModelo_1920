@@ -78,6 +78,15 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
         protected global::System.Web.UI.WebControls.TextBox tbTipo;
 
         /// <summary>
+        /// FileUpload1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+
+        /// <summary>
         /// lbErro control.
         /// </summary>
         /// <remarks>
