@@ -1,6 +1,7 @@
 ﻿using M17AB_TrabalhoModelo_1920_WIP.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -29,7 +30,101 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Utilizadores
 
             Utilizador utilizador = new Utilizador();
 
-            GvUtilizadores.DataSource = utilizador.ListaTodosUtilizadores();
+            DataTable dados= utilizador.ListaTodosUtilizadores();
+
+            GvUtilizadores.DataSource = dados;
+            GvUtilizadores.AutoGenerateColumns = false;
+
+            //remover
+            DataColumn dcRemover = new DataColumn();
+            dcRemover.ColumnName = "Remover";
+            dcRemover.DataType = Type.GetType("System.String");
+            dados.Columns.Add(dcRemover);
+            //editar
+            DataColumn dcEditar = new DataColumn();
+            dcEditar.ColumnName = "Editar";
+            dcEditar.DataType = Type.GetType("System.String");
+            dados.Columns.Add(dcEditar);
+
+            //bloquear
+            DataColumn dcBloquear = new DataColumn();
+            dcBloquear.ColumnName = "Bloquear";
+            dcBloquear.DataType = Type.GetType("System.String");
+            dados.Columns.Add(dcBloquear);
+            //histórico
+            DataColumn dcHistorico = new DataColumn();
+            dcHistorico.ColumnName = "Historico";
+            dcHistorico.DataType = Type.GetType("System.String");
+            dados.Columns.Add(dcHistorico);
+
+            //gridview
+            HyperLinkField hlRemover = new HyperLinkField();
+            hlRemover.HeaderText = "Remover";
+            hlRemover.DataTextField = "Remover";
+            hlRemover.Text = "Remover";
+            hlRemover.DataNavigateUrlFormatString = "RemoverUtilizador.aspx?id={0}";
+            hlRemover.DataNavigateUrlFields = new string[] { "id" };
+            GvUtilizadores.Columns.Add(hlRemover);
+
+            HyperLinkField hlEditar = new HyperLinkField();
+            hlEditar.HeaderText = "Editar";
+            hlEditar.DataTextField = "Editar";
+            hlEditar.Text = "Editar";
+            hlEditar.DataNavigateUrlFormatString = "EditarUtilizador.aspx?id={0}";
+            hlEditar.DataNavigateUrlFields = new string[] { "id" };
+            GvUtilizadores.Columns.Add(hlEditar);
+
+            HyperLinkField hlBloquear = new HyperLinkField();
+            hlBloquear.HeaderText = "Bloquear";
+            hlBloquear.DataTextField = "Bloquear";
+            hlBloquear.Text = "Bloquear";
+            hlBloquear.DataNavigateUrlFormatString = "BloquearUtilizador.aspx?id={0}";
+            hlBloquear.DataNavigateUrlFields = new string[] { "id" };
+            GvUtilizadores.Columns.Add(hlBloquear);
+
+            HyperLinkField hlHistorico = new HyperLinkField();
+            hlHistorico.HeaderText = "Histórico";
+            hlHistorico.DataTextField = "Historico";
+            hlHistorico.Text = "Histórico";
+            hlHistorico.DataNavigateUrlFormatString = "HistoricoUtilizador.aspx?id={0}";
+            hlHistorico.DataNavigateUrlFields = new string[] { "id" };
+            GvUtilizadores.Columns.Add(hlHistorico);
+            //id
+            BoundField bfId = new BoundField();
+            bfId.HeaderText = "Id";
+            bfId.DataField = "id";
+            bfId.Visible = false;
+            GvUtilizadores.Columns.Add(bfId);
+            //email
+            BoundField bfEmail = new BoundField();
+            bfEmail.HeaderText = "Email";
+            bfEmail.DataField = "email";
+            GvUtilizadores.Columns.Add(bfEmail);
+            //nome
+            BoundField bfNome = new BoundField();
+            bfNome.HeaderText = "Nome";
+            bfNome.DataField = "nome";
+            GvUtilizadores.Columns.Add(bfNome);
+            //morada
+            BoundField bfMorada = new BoundField();
+            bfMorada.HeaderText = "Morada";
+            bfMorada.DataField = "morada";
+            GvUtilizadores.Columns.Add(bfMorada);
+            //nif
+            BoundField bfNif = new BoundField();
+            bfNif.HeaderText = "Nif";
+            bfNif.DataField = "nif";
+            GvUtilizadores.Columns.Add(bfNif);
+            //estado
+            BoundField bfEstado = new BoundField();
+            bfEstado.HeaderText = "Estado";
+            bfEstado.DataField = "estado";
+            GvUtilizadores.Columns.Add(bfEstado);
+            //perfil
+            BoundField bfPerfil = new BoundField();
+            bfPerfil.HeaderText = "Perfil";
+            bfPerfil.DataField = "perfil";
+            GvUtilizadores.Columns.Add(bfPerfil);
             GvUtilizadores.DataBind();
 
         }

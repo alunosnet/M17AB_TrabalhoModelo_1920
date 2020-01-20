@@ -1,10 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Utilizadores.aspx.cs" Inherits="M17AB_TrabalhoModelo_1920_WIP.Admin.Utilizadores.Utilizadores" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="EditarUtilizador.aspx.cs" Inherits="M17AB_TrabalhoModelo_1920_WIP.Admin.Utilizadores.EditarUtilizador" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h2>Utilizadores</h2>
-    <asp:GridView CssClass="table" runat="server" ID="GvUtilizadores" />
-    <h2>Adicionar Utilizador</h2>
+        <h2>Editar Utilizador</h2>
     Email:<asp:TextBox CssClass="form-control" ID="tbEmail" runat="server"></asp:TextBox><br />
     Nome:<asp:TextBox CssClass="form-control" ID="tbNome" runat="server"></asp:TextBox><br />
     Morada:<asp:TextBox CssClass="form-control" ID="tbMorada" runat="server"></asp:TextBox><br />

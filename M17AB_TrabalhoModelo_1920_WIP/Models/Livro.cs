@@ -1,6 +1,7 @@
 ﻿using M17AB_TrabalhoModelo_1920.Classes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -76,6 +77,19 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Models
                 },
             };
             return bd.executaEDevolveSQL(sql, parametros);
+        }
+
+        internal DataTable ListaTodosLivros()
+        {
+            string sql = @"SELECT nlivro,nome,ano,data_aquisicao,
+                    preco, autor, tipo,
+                    case
+                        when estado=0 then 'Emprestado'
+                        when estado=1 then 'Disponível'
+                        when estado=2 then 'Reservado'
+                    end as estado
+                    FROM Livros";
+            return bd.devolveSQL(sql);
         }
     }
 }
