@@ -69,6 +69,15 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
         protected global::System.Web.UI.WebControls.TextBox tbTipo;
 
         /// <summary>
+        /// imgCapa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgCapa;
+
+        /// <summary>
         /// FileUpload1 control.
         /// </summary>
         /// <remarks>
@@ -94,5 +103,14 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button bt1;
+
+        /// <summary>
+        /// bt2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button bt2;
     }
 }

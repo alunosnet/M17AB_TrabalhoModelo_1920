@@ -17,6 +17,7 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
 
             ConfigurarGrid();
 
+            //TODO: bug quando clica no calendário
             if(!IsPostBack)
                 AtualizarGrid();
         }

@@ -9,7 +9,9 @@
     Preço:<asp:TextBox CssClass="form-control" ID="tbPreco" runat="server"></asp:TextBox><br />
     Autor:<asp:TextBox CssClass="form-control" ID="tbAutor" runat="server"></asp:TextBox><br />
     Tipo:<asp:TextBox CssClass="form-control" ID="tbTipo" runat="server"></asp:TextBox><br />
-    Capa:<asp:FileUpload ID="FileUpload1" runat="server" /><br />
+    Capa: <asp:Image runat="server" ID="imgCapa" Width="200px" /><br />
+    <asp:FileUpload ID="FileUpload1" runat="server" /><br />
     <asp:Label ID="lbErro" runat="server" /><br />
-    <asp:Button CssClass="btn btn-lg btn-danger" ID="bt1" runat="server" Text="Adicionar" OnClick="bt1_Click" />
+    <asp:Button CssClass="btn btn-lg btn-danger" ID="bt1" runat="server" Text="Atualizar" OnClick="bt1_Click" />
+    <asp:Button CssClass="btn btn-lg btn-info" ID="bt2" runat="server" Text="Voltar" PostBackUrl="~/Admin/Livros/Livros.aspx" />
 </asp:Content>
