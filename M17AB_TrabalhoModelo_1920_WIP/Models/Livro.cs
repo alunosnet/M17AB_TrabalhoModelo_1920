@@ -91,5 +91,54 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Models
                     FROM Livros";
             return bd.devolveSQL(sql);
         }
+
+        public DataTable devolveDadosLivro(int nlivro)
+        {
+            string sql = "SELECT * FROM Livros WHERE nlivro=@nlivro";
+            List<SqlParameter> parametros = new List<SqlParameter>()
+            {
+                new SqlParameter() {ParameterName="@nlivro",SqlDbType=SqlDbType.Int,Value=nlivro }
+            };
+            return bd.devolveSQL(sql, parametros);
+        }
+        public void removerLivro(int nlivro)
+        {
+            string sql = "DELETE FROM Livros WHERE nlivro=@nlivro";
+            List<SqlParameter> parametros = new List<SqlParameter>()
+            {
+                new SqlParameter() {ParameterName="@nlivro",SqlDbType=SqlDbType.Int,Value=nlivro }
+            };
+            bd.executaSQL(sql, parametros);
+        }
+        public void atualizaLivro()
+        {
+            string sql = "UPDATE Livros SET nome=@nome,ano=@ano,data_aquisicao=@data,preco=@preco,";
+            sql += "autor=@autor, tipo=@tipo ";
+            sql += " WHERE nlivro=@nlivro;";
+            List<SqlParameter> parametros = new List<SqlParameter>()
+            {
+                new SqlParameter() {ParameterName="@nome",SqlDbType=SqlDbType.VarChar,Value= nome},
+                new SqlParameter() {ParameterName="@ano",SqlDbType=SqlDbType.Int,Value= ano},
+                new SqlParameter() {ParameterName="@data",SqlDbType=SqlDbType.DateTime,Value= data_aquisicao},
+                new SqlParameter() {ParameterName="@preco",SqlDbType=SqlDbType.Decimal,Value= preco},
+                new SqlParameter() {ParameterName="@autor",SqlDbType=SqlDbType.VarChar,Value=autor},
+                new SqlParameter() {ParameterName="@tipo",SqlDbType=SqlDbType.VarChar,Value=tipo},
+                new SqlParameter() {ParameterName="@nlivro",SqlDbType=SqlDbType.Int,Value=nlivro}
+            };
+            bd.executaSQL(sql, parametros);
+        }
+        public DataTable listaLivrosDisponiveis(int? ordena = null)
+        {
+            string sql = "SELECT * FROM Livros WHERE estado=1";
+            if (ordena != null && ordena == 1)
+            {
+                sql += " order by preco";
+            }
+            if (ordena != null && ordena == 2)
+            {
+                sql += " order by autor";
+            }
+            return bd.devolveSQL(sql);
+        }
     }
 }

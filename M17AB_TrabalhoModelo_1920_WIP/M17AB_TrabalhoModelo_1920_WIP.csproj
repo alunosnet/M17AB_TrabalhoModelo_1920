@@ -67,9 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Admin.aspx" />
     <Content Include="Admin\Livros\EditarLivro.aspx" />
     <Content Include="Admin\Livros\Livros.aspx" />
     <Content Include="Admin\Livros\RemoverLivro.aspx" />
+    <Content Include="Admin\Servicos.asmx" />
     <Content Include="Admin\Utilizadores\BloquearUtilizador.aspx" />
     <Content Include="Admin\Utilizadores\EditarUtilizador.aspx" />
     <Content Include="Admin\Utilizadores\HistoricoUtilizador.aspx" />
@@ -99,6 +101,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Livros\EditarLivro.aspx.cs">
       <DependentUpon>EditarLivro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -119,6 +128,10 @@
     </Compile>
     <Compile Include="Admin\Livros\RemoverLivro.aspx.designer.cs">
       <DependentUpon>RemoverLivro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Servicos.asmx.cs">
+      <DependentUpon>Servicos.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Admin\Utilizadores\BloquearUtilizador.aspx.cs">
       <DependentUpon>BloquearUtilizador.aspx</DependentUpon>
@@ -158,6 +171,7 @@
     <Compile Include="Classes\BaseDados.cs" />
     <Compile Include="Classes\Helper.cs" />
     <Compile Include="Classes\ReCaptcha.cs" />
+    <Compile Include="Classes\UserLogin.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -168,6 +182,7 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Models\Emprestimo.cs" />
     <Compile Include="Models\Livro.cs" />
     <Compile Include="Models\Utilizador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
