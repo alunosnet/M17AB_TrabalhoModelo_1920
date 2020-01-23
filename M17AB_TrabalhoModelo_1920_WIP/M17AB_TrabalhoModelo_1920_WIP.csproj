@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Admin.aspx" />
+    <Content Include="Admin\Emprestimos\Emprestimos.aspx" />
     <Content Include="Admin\Livros\EditarLivro.aspx" />
     <Content Include="Admin\Livros\Livros.aspx" />
     <Content Include="Admin\Livros\RemoverLivro.aspx" />
@@ -107,6 +108,13 @@
     </Compile>
     <Compile Include="Admin\Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Emprestimos\Emprestimos.aspx.cs">
+      <DependentUpon>Emprestimos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Emprestimos\Emprestimos.aspx.designer.cs">
+      <DependentUpon>Emprestimos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Livros\EditarLivro.aspx.cs">
       <DependentUpon>EditarLivro.aspx</DependentUpon>
@@ -210,7 +218,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Admin\Consultas\" />
-    <Folder Include="Admin\Emprestimos\" />
     <Folder Include="Public\Images\" />
     <Folder Include="User\" />
   </ItemGroup>

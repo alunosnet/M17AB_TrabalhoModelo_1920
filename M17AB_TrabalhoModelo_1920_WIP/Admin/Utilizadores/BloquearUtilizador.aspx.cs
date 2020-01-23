@@ -25,4 +25,5 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Utilizadores
                 Response.Redirect("/Admin/Utilizadores/Utilizadores.aspx");
             }
         }
+    }
 }
