@@ -7,39 +7,57 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
+namespace M17AB_TrabalhoModelo_1920_WIP
 {
 
 
-    public partial class RemoverLivro
+    public partial class index
     {
 
         /// <summary>
-        /// lbNlivro control.
+        /// divLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbNlivro;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divLogin;
 
         /// <summary>
-        /// lbNome control.
+        /// tbEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbNome;
+        protected global::System.Web.UI.WebControls.TextBox tbEmail;
 
         /// <summary>
-        /// imgCapa control.
+        /// tbPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgCapa;
+        protected global::System.Web.UI.WebControls.TextBox tbPassword;
+
+        /// <summary>
+        /// btLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btLogin;
+
+        /// <summary>
+        /// btRecuperar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btRecuperar;
 
         /// <summary>
         /// lbErro control.
@@ -49,23 +67,5 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbErro;
-
-        /// <summary>
-        /// btRemover control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btRemover;
-
-        /// <summary>
-        /// btCancelar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btCancelar;
     }
 }
