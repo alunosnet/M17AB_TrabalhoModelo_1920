@@ -42,13 +42,13 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
         protected global::System.Web.UI.WebControls.TextBox tbAno;
 
         /// <summary>
-        /// Calendar1 control.
+        /// tbData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        protected global::System.Web.UI.WebControls.TextBox tbData;
 
         /// <summary>
         /// tbPreco control.

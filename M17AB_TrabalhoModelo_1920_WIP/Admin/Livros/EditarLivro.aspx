@@ -5,7 +5,7 @@
      <h2>Editar livro</h2>
     Nome:<asp:TextBox CssClass="form-control" ID="tbNome" runat="server"></asp:TextBox><br />
     Ano:<asp:TextBox CssClass="form-control" ID="tbAno" runat="server"></asp:TextBox><br />
-    Data aquisição:<asp:Calendar Height="200px" CssClass="form-control" ID="Calendar1" runat="server"></asp:Calendar><br />
+    Data aquisição:<asp:TextBox CssClass="form-control" ID="tbData" runat="server" TextMode="Date" /><br />
     Preço:<asp:TextBox CssClass="form-control" ID="tbPreco" runat="server"></asp:TextBox><br />
     Autor:<asp:TextBox CssClass="form-control" ID="tbAutor" runat="server"></asp:TextBox><br />
     Tipo:<asp:TextBox CssClass="form-control" ID="tbTipo" runat="server"></asp:TextBox><br />

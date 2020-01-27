@@ -56,7 +56,7 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
                     throw new Exception("O ano de edição do livro tem de ser superior a 0 e inferior ou igual ao ano atual.");
 
                 //validar a data_aquisicao
-                DateTime dataAquisicao = Calendar1.SelectedDate;
+                DateTime dataAquisicao = DateTime.Parse(tbData.Text);
                 if (dataAquisicao > DateTime.Now)
                     throw new Exception("A data não é válida. Tem de ser inferior ou igual à data atual");
 
@@ -97,7 +97,7 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
                 //preencher propriedades
                 livro.ano = int.Parse(tbAno.Text);
                 livro.autor = tbAutor.Text;
-                livro.data_aquisicao = Calendar1.SelectedDate;
+                livro.data_aquisicao = dataAquisicao;
                 livro.estado = 1;
                 livro.nome = tbNome.Text;
                 livro.preco = decimal.Parse(tbPreco.Text);

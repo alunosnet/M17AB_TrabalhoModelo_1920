@@ -33,7 +33,7 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
                 tbAutor.Text = dados.Rows[0]["autor"].ToString();
                 tbPreco.Text = dados.Rows[0]["preco"].ToString();
                 tbTipo.Text = dados.Rows[0]["tipo"].ToString();
-                Calendar1.SelectedDate = DateTime.Parse(dados.Rows[0]["data_aquisicao"].ToString());
+                tbData.Text= dados.Rows[0]["data_aquisicao"].ToString();
 
                 string ficheiro = @"~\Public\Images\" + nlivro + ".jpg";
                 imgCapa.ImageUrl = ficheiro;
@@ -68,7 +68,7 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
                     throw new Exception("O ano de edição do livro tem de ser superior a 0 e inferior ou igual ao ano atual.");
 
                 //validar a data_aquisicao
-                DateTime dataAquisicao = Calendar1.SelectedDate;
+                DateTime dataAquisicao = DateTime.Parse(tbData.Text);
                 if (dataAquisicao > DateTime.Now)
                     throw new Exception("A data não é válida. Tem de ser inferior ou igual à data atual");
 
@@ -100,7 +100,7 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
                 livro.preco = decimal.Parse(tbPreco.Text);
                 livro.tipo = tbTipo.Text;
                 livro.autor = tbAutor.Text;
-                livro.data_aquisicao = Calendar1.SelectedDate;
+                livro.data_aquisicao = dataAquisicao;
 
                 if (FileUpload1.HasFile)
                 {

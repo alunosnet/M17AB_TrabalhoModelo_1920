@@ -1,4 +1,5 @@
-﻿using M17AB_TrabalhoModelo_1920_WIP.Models;
+﻿using M17AB_TrabalhoModelo_1920.Classes;
+using M17AB_TrabalhoModelo_1920_WIP.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -35,6 +36,34 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin
                 lLivros.Add(novo);
             }
             return new JavaScriptSerializer().Serialize(lLivros);
+        }
+        [WebMethod(EnableSession = true)]
+        public List<Dados> DadosUtilizadores()
+        {
+            if (Session["perfil"] == null ||
+                Session["perfil"].ToString() != "0")
+                return null;
+
+            List<Dados> devolver = new List<Dados>();
+            BaseDados bd = new BaseDados();
+            DataTable dados = bd.devolveSQL(@"Select Count(*), case
+                    when perfil=0 then 'Admin'
+                    when perfil=1 then 'User'
+                    end as [perfil]
+                    from Utilizadores group by perfil");
+            for (int i = 0; i < dados.Rows.Count; i++)
+            {
+                Dados registo = new Dados();
+                registo.perfil = dados.Rows[i][1].ToString();
+                registo.contagem = int.Parse(dados.Rows[i][0].ToString());
+                devolver.Add(registo);
+            }
+            return devolver;
+        }
+        public class Dados
+        {
+            public string perfil;
+            public int contagem;
         }
     }
 }

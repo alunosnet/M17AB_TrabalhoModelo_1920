@@ -7,7 +7,7 @@
     <asp:CheckBox AutoPostBack="true" OnCheckedChanged="cbEmprestimos_CheckedChanged" runat="server" ID="cbEmprestimos" />
     <asp:GridView ID="GvEmprestimos" runat="server" CssClass="table" />
     <h2>Adicionar empréstimos</h2>
-    Data devolução:<asp:TextBox runat="server" ID="tbData" TextMode="Date" />
+    Data devolução:<asp:TextBox CssClass="form-control" runat="server" ID="tbData" TextMode="Date" />
     <br />Livro:<asp:DropDownList runat="server" ID="ddLivros" CssClass="form-control"/><br />
     Utilizador:<asp:DropDownList runat="server" id="ddUtilizador" CssClass="form-control" /><br />
     <asp:Label runat="server" ID="lbErro" />
