@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using M17AB_TrabalhoModelo_1920_WIP.Models;
 
 namespace M17AB_TrabalhoModelo_1920_WIP
 {
@@ -48,5 +49,53 @@ namespace M17AB_TrabalhoModelo_1920_WIP
         {
 
         }
+
+        private void atualizaGrelhaLivros(string pesquisa = null, int? ordena = null)
+        {
+            Livro livro = new Livro();
+            DataTable dados;
+            //listar todos os livros disponiveis
+            if (pesquisa == null)
+            {
+                //se existir o cookie ultimolivro listar os livros do mesmo autor
+                HttpCookie cookieAutor = Request.Cookies["ultimolivro"];
+                if (cookieAutor == null)
+                    dados = livro.listaLivrosDisponiveis(ordena);
+                else
+                    dados = livro.listaLivrosDoAutor(Server.UrlDecode(cookieAutor.Value));
+            }
+            else
+                dados = livro.listaLivrosDisponiveis(pesquisa, ordena);
+
+            GerarIndex(dados);
+        }
+        private void GerarIndex(DataTable dados)
+        {
+            if (dados == null || dados.Rows.Count == 0)
+            {
+                divLivros.InnerHtml = "";
+                return;
+            }
+            string grelha = "<div class='container-fluid'>";
+            grelha += "<div class='row'>";
+            foreach (DataRow livro in dados.Rows)
+            {
+                grelha += "<div class='col'>";
+                grelha += "<img src='/Public/Images/" + livro[0].ToString() +
+                    ".jpg' class='img-fluid'/>";
+                grelha += "<p/><span class='stat-title'>" + livro[1].ToString()
+                    + "</span>";
+                grelha += "<span class='stat-title'>" +
+                    String.Format(" | {0:C}", Decimal.Parse(livro["preco"].ToString()))
+                    + "</span>";
+                grelha += "<br/><a href='detalheslivro.aspx?id=" + livro[0].ToString()
+                    + "'>Detalhes</a>";
+                grelha += "</div>";
+            }
+
+            grelha += "</div></div>";
+            divLivros.InnerHtml = grelha;
+        }
+
     }
 }

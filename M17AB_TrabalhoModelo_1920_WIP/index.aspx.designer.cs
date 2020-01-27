@@ -42,22 +42,22 @@ namespace M17AB_TrabalhoModelo_1920_WIP
         protected global::System.Web.UI.WebControls.TextBox tbPassword;
 
         /// <summary>
-        /// btLogin control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btLogin;
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// btRecuperar control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btRecuperar;
+        protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
         /// lbErro control.
@@ -67,5 +67,32 @@ namespace M17AB_TrabalhoModelo_1920_WIP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbErro;
+
+        /// <summary>
+        /// tbPesquisa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbPesquisa;
+
+        /// <summary>
+        /// btPesquisa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btPesquisa;
+
+        /// <summary>
+        /// divLivros control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divLivros;
     }
 }

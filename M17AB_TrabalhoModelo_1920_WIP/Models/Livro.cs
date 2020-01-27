@@ -140,5 +140,43 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Models
             }
             return bd.devolveSQL(sql);
         }
+
+        internal DataTable listaLivrosDoAutor(string pesquisa)
+        {
+            string sql = "SELECT * FROM Livros WHERE estado=1 and autor like @nome";
+
+            List<SqlParameter> parametros = new List<SqlParameter>()
+            {
+                new SqlParameter() {
+                    ParameterName ="@nome",
+                    SqlDbType =SqlDbType.VarChar,
+                    Value = "%"+pesquisa+"%"},
+            };
+            return bd.devolveSQL(sql, parametros);
+        }
+
+        internal DataTable listaLivrosDisponiveis(string pesquisa, int? ordena = null)
+        {
+            string sql = "SELECT * FROM Livros WHERE estado=1 and nome like @nome";
+            if (ordena != null && ordena == 1)
+            {
+                sql += " order by preco";
+            }
+            if (ordena != null && ordena == 2)
+            {
+                sql += " order by autor";
+            }
+
+            List<SqlParameter> parametros = new List<SqlParameter>()
+            {
+                new SqlParameter() {
+                    ParameterName ="@nome",
+                    SqlDbType =SqlDbType.VarChar,
+                    Value = "%"+pesquisa+"%"},
+            };
+            return bd.devolveSQL(sql, parametros);
+        }
+
+
     }
 }
