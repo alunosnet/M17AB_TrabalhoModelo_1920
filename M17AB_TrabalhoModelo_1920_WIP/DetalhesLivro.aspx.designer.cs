@@ -11,70 +11,61 @@ namespace M17AB_TrabalhoModelo_1920_WIP
 {
 
 
-    public partial class Registo
+    public partial class DetalhesLivro
     {
 
         /// <summary>
-        /// tbEmail control.
+        /// imgCapa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbEmail;
+        protected global::System.Web.UI.WebControls.Image imgCapa;
 
         /// <summary>
-        /// tbNome control.
+        /// lbNome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbNome;
+        protected global::System.Web.UI.WebControls.Label lbNome;
 
         /// <summary>
-        /// tbMorada control.
+        /// lbAutor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbMorada;
+        protected global::System.Web.UI.WebControls.Label lbAutor;
 
         /// <summary>
-        /// tbNif control.
+        /// lbAno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbNif;
+        protected global::System.Web.UI.WebControls.Label lbAno;
 
         /// <summary>
-        /// tbPassword control.
+        /// btReservar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbPassword;
+        protected global::System.Web.UI.WebControls.Button btReservar;
 
         /// <summary>
-        /// lbErro control.
+        /// lbMensagem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbErro;
-
-        /// <summary>
-        /// btRegistar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btRegistar;
+        protected global::System.Web.UI.WebControls.Label lbMensagem;
     }
 }

@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using M17AB_TrabalhoModelo_1920_WIP.Models;
+using System.Configuration;
 
 namespace M17AB_TrabalhoModelo_1920_WIP
 {
@@ -18,6 +19,16 @@ namespace M17AB_TrabalhoModelo_1920_WIP
             if (Session["perfil"] != null)
                 divLogin.Visible = false;
 
+            int? ordena = 0;
+            try
+            {
+                ordena = int.Parse(Request["ordena"].ToString());
+            }
+            catch
+            {
+                ordena = null;
+            }
+            atualizaGrelhaLivros(null, ordena);
         }
 
         protected void btLogin_Click(object sender, EventArgs e)
@@ -47,7 +58,31 @@ namespace M17AB_TrabalhoModelo_1920_WIP
 
         protected void btRecuperar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (tbEmail.Text == String.Empty)
+                    throw new Exception("Tem de indicar um email");
+                string email = tbEmail.Text;
+                Utilizador utilizador = new Utilizador();
+                DataTable dados = utilizador.devolveDadosUtilizador(email);
+                if(dados!=null && dados.Rows.Count == 1)
+                {
+                    Guid g = Guid.NewGuid();
 
+                    utilizador.recuperarPassword(email, g.ToString());
+                    string mensagem = "Clique no link para recuperar a sua password.\n";
+                    mensagem += "<a href='http://" + Request.Url.Authority + "/recuperarPassword.aspx?id=";
+                    mensagem += Server.UrlEncode(g.ToString()) + "'>Clique aqui</a>";
+                    string password = ConfigurationManager.AppSettings["pwdEmail"].ToString();
+                    string meuemail= ConfigurationManager.AppSettings["Email"].ToString();
+                    Helper.enviarMail(meuemail, password, email, "Recuperação de password", mensagem);
+                    lbErro.Text = "Foi enviado um email.";
+                }
+            }
+            catch
+            {
+
+            }
         }
 
         private void atualizaGrelhaLivros(string pesquisa = null, int? ordena = null)
@@ -97,5 +132,9 @@ namespace M17AB_TrabalhoModelo_1920_WIP
             divLivros.InnerHtml = grelha;
         }
 
+        protected void btPesquisa_Click(object sender, EventArgs e)
+        {
+            atualizaGrelhaLivros(tbPesquisa.Text);
+        }
     }
 }

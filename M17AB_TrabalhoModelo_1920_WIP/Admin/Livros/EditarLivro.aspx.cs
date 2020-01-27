@@ -13,7 +13,10 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //TODO: página para admin
+            //Validar a sessão do utilizador
+            if (Session["perfil"] == null ||
+                Session["perfil"].ToString() != "0")
+                Response.Redirect("/index.aspx");
 
             if (IsPostBack) return;
             //carregar os dados do livro a editar

@@ -7,38 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace M17AB_TrabalhoModelo_1920_WIP
+namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Consultas
 {
 
 
-    public partial class recuperarPassword
+    public partial class Consultas
     {
 
         /// <summary>
-        /// tbPassword control.
+        /// ddConsultas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbPassword;
+        protected global::System.Web.UI.WebControls.DropDownList ddConsultas;
 
         /// <summary>
-        /// btNovaPassword control.
+        /// gvConsultas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btNovaPassword;
-
-        /// <summary>
-        /// lbErro control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbErro;
+        protected global::System.Web.UI.WebControls.GridView gvConsultas;
     }
 }

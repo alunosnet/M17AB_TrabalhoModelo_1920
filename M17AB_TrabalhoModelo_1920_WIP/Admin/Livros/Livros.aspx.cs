@@ -13,12 +13,13 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //TODO: página para admin
+            //Validar a sessão do utilizador
+            if (Session["perfil"] == null ||
+                Session["perfil"].ToString() != "0")
+                Response.Redirect("/index.aspx"); 
 
             ConfigurarGrid();
 
-            //TODO: bug quando clica no calendário
-            if(!IsPostBack)
                 AtualizarGrid();
         }
         private void ConfigurarGrid()
@@ -101,7 +102,6 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
                 livro.nome = tbNome.Text;
                 livro.preco = decimal.Parse(tbPreco.Text);
                 livro.tipo = tbTipo.Text;
-                //TODO: guardar imagem da capa
                 //guardar
                 int idlivro=livro.Adicionar();
 

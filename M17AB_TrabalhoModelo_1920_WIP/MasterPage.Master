@@ -96,6 +96,17 @@
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+            <!--Aviso dos cookies-->
+             <div runat="server" id="div_aviso">
+            <footer class="footer">
+                <div class="container">
+                    Este site utiliza cookies.
+                    <asp:Button runat="server" ID="bt1" 
+                        CssClass="btn btn-outline-primary float-right"
+                        Text="Aceitar" OnClick="bt1_Click" />
+                </div>
+            </footer>
+        </div>
         </div>
     </form>
 </body>
