@@ -8,7 +8,7 @@
     <div class="form-group">
         <label for="tbEmail">Email:</label>
         <asp:TextBox runat="server" ID="tbEmail" 
-            CssClass="form-control" TextMode="Email" />
+            CssClass="form-control" TextMode="Email" placeholder="email@email.com" />
     </div>
     <!--Nome-->
     <div class="form-group">

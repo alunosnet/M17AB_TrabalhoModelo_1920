@@ -44,6 +44,7 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Livros
                 Livro livro = new Livro();
                 livro.removerLivro(id);
                 string ficheiro = @"~\Public\Images\" + id + ".jpg";
+                ficheiro = Server.MapPath(ficheiro);
                 File.Delete(ficheiro);
                 lbErro.Text = "Livro removido com sucesso.";
             }
