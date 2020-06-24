@@ -128,6 +128,7 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Emprestimos
 
         private void GvEmprestimos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            if (e.CommandName == "Page") return;
             //executado quando o utilizador click num botão de comando
             Emprestimo emprestimo = new Emprestimo();
             Utilizador utilizador = new Utilizador();

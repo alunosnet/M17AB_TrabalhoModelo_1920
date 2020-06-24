@@ -17,6 +17,7 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Consultas
             if (Session["perfil"] == null ||
                 Session["perfil"].ToString() != "0")
                 Response.Redirect("/index.aspx");
+
         }
 
         protected void ddConsultas_SelectedIndexChanged(object sender, EventArgs e)

@@ -24,7 +24,7 @@ namespace M17AB_TrabalhoModelo_1920_WIP
             {
                 ordena = int.Parse(Request["ordena"].ToString());
             }
-            catch
+            catch(Exception erro)
             {
                 ordena = null;
             }
