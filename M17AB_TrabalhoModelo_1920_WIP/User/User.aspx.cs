@@ -16,8 +16,6 @@ namespace M17AB_TrabalhoModelo_1920_WIP.User
             if (Session["perfil"] == null)
                 Response.Redirect("~/index.aspx");
 
-            
-
             if (!IsPostBack)
             {
                 divEditarPerfil.Visible = false;

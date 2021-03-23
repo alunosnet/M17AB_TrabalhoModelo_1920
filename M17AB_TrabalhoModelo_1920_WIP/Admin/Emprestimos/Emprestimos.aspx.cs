@@ -20,10 +20,10 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Emprestimos
                 Response.Redirect("/index.aspx");
 
             ConfigurarGrid();
+            if (IsPostBack) return;
 
             atualizarGrid();
 
-            if (IsPostBack) return;
             atualizarDDLivros();
             atualizarDDUtilizadores();
 
@@ -91,7 +91,6 @@ namespace M17AB_TrabalhoModelo_1920_WIP.Admin.Emprestimos
             btEmail.CommandName = "email";
             btEmail.ControlStyle.CssClass = "btn btn-danger";
             GvEmprestimos.Columns.Add(btEmail);
-
             GvEmprestimos.DataSource = dados;
             GvEmprestimos.AutoGenerateColumns = true;
             GvEmprestimos.DataBind();
